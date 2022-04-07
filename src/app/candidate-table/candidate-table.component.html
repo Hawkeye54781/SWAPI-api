@@ -1,0 +1,62 @@
+<span class="warning">* Please select a Home world cell as the data is there but value is not displaying</span>
+
+<ag-grid-angular
+  style="width: 1200px; height: 500px"
+  class="ag-theme-alpine"
+  [rowData]="candidateDetails | async"
+  [columnDefs]="columnDefs"
+  (cellClicked)="openPlanetDetails($event)"
+>
+</ag-grid-angular>
+
+<div *ngIf="selectedHomeWorld.name.length > 0" class="container homeworld-details">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>HomeWorld</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h3>Planet Name</h3>
+        </div>
+        <div class="card-body">
+          <h3>{{ selectedHomeWorld.name }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h3>Planet Diameter</h3>
+        </div>
+        <div class="card-body">
+          <h3>{{ selectedHomeWorld.diameter }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h3>Planet Climate</h3>
+        </div>
+        <div class="card-body">
+          <h3>{{ selectedHomeWorld.climate }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h3>Planet Population</h3>
+        </div>
+        <div class="card-body">
+          <h3>{{ selectedHomeWorld.population }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
